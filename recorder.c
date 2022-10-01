@@ -65,6 +65,18 @@ char* createName(int value,char *end){
  return str;
 }
 
+void NotNull(char *str,int size){
+ char *ptr=str;
+ char *end=ptr+size;
+ while(ptr<end){
+  if(*ptr==0){
+   *ptr=1;
+  }
+  ptr++;
+ }
+
+}
+
 char *namelist;//list of wav files in order for mass delete later with rm
 int main(int argn,char* argv[]){
 
@@ -113,6 +125,7 @@ int main(int argn,char* argv[]){
     while(ptr!=NULL){
      struct Interface *rec=ptr->in;
      snd_pcm_readi (rec->capture_handle, rec->buffer, 128);
+     NotNull(rec->buffer,size);
      write(ptr->file,rec->buffer,size);//write into separate files, I tried to have merged streams but I couldn't figure out how to do it
      ptr=ptr->next;
     }

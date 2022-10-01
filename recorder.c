@@ -47,7 +47,7 @@ void nullify(char *buff,int size){
  char *ptr=buff;
  char *end=ptr+size;
  for(ptr=buff;ptr<end;ptr++){
-  *ptr=0;
+  *ptr=3;
  }
 }
 struct Interfaces *intf=NULL;
@@ -70,7 +70,7 @@ void NotNull(char *str,int size){
  char *end=ptr+size;
  while(ptr<end){
   if(*ptr==0){
-   *ptr=1;
+   *ptr=3;
   }
   ptr++;
  }

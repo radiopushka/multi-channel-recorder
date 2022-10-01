@@ -16,4 +16,5 @@ This can be used for making voice overs for youtube videos for example.
 The program can open as many interfaces as you tell it too, but make sure in Pulse Audio that all of these interfaces are recording from DIFFERENT sources.
 
 compilation: sh compile.sh
+
 install: sudo cp ./recorder /usr/local/bin
